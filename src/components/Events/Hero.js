@@ -5,8 +5,7 @@ import gsap from "gsap";
 import whitelogo from "../../assets/logo-full-white.png";
 import img1 from "../../assets/highlights/slide1.jpeg";
 
-const Hero = () => {
-  const [isOpen, setIsOpen] = useState(false);
+const Hero = ({isOpen, setIsOpen}) => {
 
   useEffect(() => {
     if (isOpen) {
@@ -25,24 +24,25 @@ const Hero = () => {
 
   return (
     <div>
-      <div className="text-4xl md:text-6xl lg:text-[5.5rem] max-w-[950px] mx-auto text-formisWhitef5 text-center font-[Hind]">
-        <h1 className="leading-[3rem] md:leading-[4.5rem] lg:leading-[7rem] font-bold">
-          HYDROVIBE 2024
+      <div className="text-4xl md:text-6xl lg:text-[12rem] mx-auto text-formisWhitef5">
+        <h1 className="relative z-0 font-bold">
+          HYDROVIBE <br />
+          <span className="tracking-normal">2024</span>
         </h1>
       </div>
-      <div className="text-2xl font-light text-formisWhitef5 max-w-[820px] text-center mx-auto mt-5">
+      {/* <div className="text-2xl font-light text-formisWhitef5 max-w-[820px] text-center mx-auto mt-5">
         <p className="text-base lg:text-[22px]">
           Focus on feeling better. Fast Pass will deliver the medications,
           essentials, and needs you require in just a few minutes. Rest up!
           Because by the time you wear your slippers, take the lift downstairs,
           and turn your engine on, we'll already be at your doorstep.
         </p>
-      </div>
+      </div> */}
 
       <div className="flex gap-5 items-center justify-center mt-10">
         <button
           onClick={() => setIsOpen(true)}
-          className="text-formisBlack15 font-bold text-[14px] bg-[#fe915f] h-[46.8px] rounded-[10px] px-4 hover:brightness-125 transition"
+          className="text-formisWhitef5 border border-formisWhitef0 font-bold text-[14px] h-[46.8px] rounded-[10px] px-4 hover:brightness-125 transition"
         >
           Register Now
         </button>
@@ -51,15 +51,21 @@ const Hero = () => {
       <Modal open={isOpen}>
         <div
           style={{ backgroundImage: `url(${img1})` }}
-          className="relative bg-cover bg-center lg:bg-top bg-formisWhitef0 text-formisBlack14
+          className="relative z-[100] bg-cover bg-center lg:bg-top bg-formisWhitef0 text-formisBlack14
                       h-screen w-screen flex justify-between"
         >
           <div className="h-full w-full bg-formisBlack15 absolute top-0 left-0 opacity-60 z-10"></div>
 
-          <section className="relative z-[100] ml-[20px] lg:ml-[90px]
-                              hidden md:flex flex-col justify-between">
+          <section
+            className="relative z-[100] ml-[20px] lg:ml-[90px]
+                              hidden md:flex flex-col justify-between"
+          >
             <div className="h-[100px] flex items-center">
-              <img src={whitelogo} alt="logo" className="max-w-[200px] lg:max-w-[260px]" />
+              <img
+                src={whitelogo}
+                alt="logo"
+                className="max-w-[200px] lg:max-w-[260px]"
+              />
             </div>
 
             <div className="mb-20 max-w-[600px]">

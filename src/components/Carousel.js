@@ -5,14 +5,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa";
-import { slides } from "./carouselData.js";
 
-const Carousel = () => {
+const Carousel = ({ slides, mainTitle1, mainTitle2 }) => {
   return (
     <div className="px-[20px] lg:px-[60px] xl:px-[90px] py-20">
       <section className="text-4xl md:text-6xl lg:text-[5.5rem] font-medium font-[Hind] mb-10 lg:mb-16">
         <h1 className="leading-[2.5rem] md:leading-[4.5rem] lg:leading-[7rem]">
-          Do more with <br /> more of your data.
+          {mainTitle1} <br /> {mainTitle2}
         </h1>
       </section>
       <Swiper

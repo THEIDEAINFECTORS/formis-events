@@ -128,7 +128,7 @@ const Footer = () => {
           className="max-w-[260px] max-h-[54.2px] mb-[40px]"
         />
         <div className="grid grid-cols-2 md:flex flex-wrap gap-[20px] text-[14px] text-[#545454]">
-          <p className="cursor-pointer">© 2024 mParticle, Inc.</p>
+          <p className="cursor-pointer">© 2024 Formis, Inc.</p>
           <p className="cursor-pointer">Privacy Policy</p>
           <p className="cursor-pointer">Cookie Policy</p>
           <p className="cursor-pointer">Website terms of service</p>

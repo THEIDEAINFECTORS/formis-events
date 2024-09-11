@@ -3,8 +3,13 @@ import Navbar from "../components/Main/Navbar/Navbar";
 import Hero from "../components/Main/Hero/Hero";
 import Features from "../components/Main/Features/Features";
 import Highlights from "../components/Main/Highlights/Highlights";
-import Carousel from "../components/Carousel/Carousel";
+import Carousel from "../components/Carousel";
 import Footer from "../components/Footer/Footer";
+import {
+  slides,
+  mainTitle1,
+  mainTitle2,
+} from "../components/Main/carouselData";
 
 const Main = ({ dropdown, setDropdown }) => {
   return (
@@ -21,7 +26,11 @@ const Main = ({ dropdown, setDropdown }) => {
         <Features />
         <Highlights />
         <div className="bg-formisWhitef0 text-formisBlack14">
-          <Carousel />
+          <Carousel
+            slides={slides}
+            mainTitle1={mainTitle1}
+            mainTitle2={mainTitle2}
+          />
         </div>
         <Footer />
       </div>

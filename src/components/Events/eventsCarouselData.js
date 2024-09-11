@@ -4,40 +4,43 @@ import img3 from "../../assets/carousel/img3.jpeg";
 import img4 from "../../assets/carousel/img4.jpeg";
 import img5 from "../../assets/carousel/img5.jpeg";
 
+export const mainTitle1 = "WET ZONE"
+export const mainTitle2 = "SCHEDULE"
+
 export const slides = [
     {
       imageUrl: img1,
-      title: "Create a unified customer view",
+      title: "Jet Ski Freestyle Battles",
       description:
         "Understand your customers through a single, comprehensive lens. Clean, unified data gives you one source of truth that you can share across teams.",
-      button: "Unified view",
+      button: "4:30 PM",
     },
     {
       imageUrl: img2,
-      title: "Create a unified customer view",
+      title: "Fly Boarding Stunts",
       description:
         "Understand your customers through a single, comprehensive lens. Clean, unified data gives you one source of truth that you can share across teams.",
-      button: "Unified view",
+      button: "5:30 PM",
     },
     {
       imageUrl: img3,
-      title: "Create a unified customer view",
+      title: "Wave Pool Surfing Shows",
       description:
         "Understand your customers through a single, comprehensive lens. Clean, unified data gives you one source of truth that you can share across teams.",
-      button: "Unified view",
+      button: "6:30 PM",
     },
     {
       imageUrl: img4,
-      title: "Create a unified customer view",
+      title: "Interactive Water Sports Tryouts",
       description:
         "Understand your customers through a single, comprehensive lens. Clean, unified data gives you one source of truth that you can share across teams.",
-      button: "Unified view",
+      button: "4:30 PM to 7 PM",
     },
     {
       imageUrl: img5,
-      title: "Create a unified customer view",
+      title: "Family Splash Zone",
       description:
         "Understand your customers through a single, comprehensive lens. Clean, unified data gives you one source of truth that you can share across teams.",
-      button: "Unified view",
+      button: "4:30 PM to 7 PM",
     },
   ];
