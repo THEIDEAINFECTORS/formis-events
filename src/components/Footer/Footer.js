@@ -1,11 +1,15 @@
 import { FaArrowRightLong } from "react-icons/fa6";
 import "./footer.css";
-import logo from "../../assets/logo-full-white.png";
+import logo from "../../assets/KITSAWhite3.png";
 import Accordian from "./Accordian";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer id="footer-section" className="h-fit text-formisWhitef5 mx-[20px] lg:mx-[90px] py-[80px]">
+    <footer
+      id="footer-section"
+      className="h-fit text-formisWhitef5 mx-[20px] lg:mx-[60px] xl:mx-[90px] py-[80px]"
+    >
       <section>
         <h2 className="text-[22px] lg:text-[34px] mb-[48px]">
           See what's possible with us.
@@ -17,9 +21,10 @@ const Footer = () => {
               <h3 className="text-[18px] md:text-[24px] mb-[16px]">
                 Contact us
               </h3>
-              <p className="text-[16px] md:text-[18px] max-w-[80%] md:max-w-[90%] lg:max-w-[60%]">
-                Lorem Ipsum is Lorem Ipsum, Lorem Ipsum Lorem Ipsum. Lorem Ipsum
-                is Lorem Ipsum is Lorem
+              <p className="text-[16px] md:text-[18px] max-w-[80%] md:max-w-[90%] lg:max-w-[70%]">
+                At KITSA™️, your health isn’t just a priority—it’s personal.
+                We’re not just delivering products; we’re delivering care,
+                convenience, and a better way of living.
               </p>
             </div>
             <div className="self-end">
@@ -30,11 +35,12 @@ const Footer = () => {
           <div className="flex w-full lg:w-[50%] border border-[#545454] hover:border-[#f0f0f0] transition cursor-pointer p-8">
             <div>
               <h3 className="text-[18px] md:text-[24px] mb-[16px]">
-                Explore the demo
+                KITSA™️.LIFE
               </h3>
-              <p className="text-[16px] md:text-[18px] max-w-[80%] md:max-w-[90%] lg:max-w-[60%]">
-                Lorem Ipsum is Lorem Ipsum, Lorem Ipsum Lorem Ipsum. Lorem Ipsum
-                is Lorem Ipsum is Lorem
+              <p className="text-[16px] md:text-[18px] max-w-[80%] md:max-w-[90%] lg:max-w-[70%]">
+                It's your gateway to a re-energized, stress-free life. Exclusive
+                experiences, meaningful connections, and a life-enhancing
+                journey designed to keep you feeling youthful and alive.
               </p>
             </div>
             <div className="self-end">
@@ -45,7 +51,7 @@ const Footer = () => {
       </section>
 
       {/* Only on larger screen sizes */}
-      <section className="hidden md:grid grid-cols-5 gap-[32px] mt-[80px]">
+      {/* <section className="hidden md:grid grid-cols-5 gap-[32px] mt-[80px]">
         <div className="footer-item flex flex-col gap-[16px]">
           <span className="text-[#545454] text-[12px]">PLATFORM</span>
           <p>Overview</p>
@@ -94,10 +100,10 @@ const Footer = () => {
           <p>Contact Us</p>
           <p>Security</p>
         </div>
-      </section>
+      </section> */}
 
       {/* Mobile View */}
-      <section className="md:hidden mt-8 flex flex-col">
+      {/* <section className="md:hidden mt-8 flex flex-col">
         <Accordian title="Platform">
           <p>Overview</p>
           <p>Real-time data infrastructure</p>
@@ -119,23 +125,74 @@ const Footer = () => {
           <p>Segmentation</p>
           <p>Analytics</p>
         </Accordian>
-      </section>
+      </section> */}
 
       <section className="mt-[48px] lg:mt-28">
-        <img
-          src={logo}
-          alt="logo"
-          className="max-w-[260px] max-h-[54.2px] mb-[40px]"
-        />
+        <div className="flex flex-wrap gap-5 mb-[40px]">
+          <p className="">Social Handles</p>
+          <a
+            target="_blank"
+            className="hover:opacity-70 transition-opacity"
+            href="https://www.facebook.com/kitsaindia/"
+          >
+            Facebook
+          </a>
+          <a
+            target="_blank"
+            className="hover:opacity-70 transition-opacity"
+            href="https://www.linkedin.com/showcase/kitsaindia/about/"
+          >
+            LinkedIn
+          </a>
+          <a
+            target="_blank"
+            className="hover:opacity-70 transition-opacity"
+            href="https://x.com/KITSAINDIA"
+          >
+            X
+          </a>
+          <a
+            target="_blank"
+            className="hover:opacity-70 transition-opacity"
+            href="https://www.instagram.com/KITSAINDIA"
+          >
+            Instagram
+          </a>
+          <a
+            target="_blank"
+            className="hover:opacity-70 transition-opacity"
+            href="https://www.youtube.com/@KITSAINDIA"
+          >
+            Youtube
+          </a>
+          <a
+            target="_blank"
+            className="hover:opacity-70 transition-opacity"
+            href="https://www.threads.net/@kitsaindia"
+          >
+            Threads
+          </a>
+        </div>
+
+        <img src={logo} alt="logo" className="max-w-[132px] mb-[40px]" />
+
         <div className="grid grid-cols-2 md:flex flex-wrap gap-[20px] text-[14px] text-[#545454]">
-          <p className="cursor-pointer">© 2024 Formis, Inc.</p>
-          <p className="cursor-pointer">Privacy Policy</p>
-          <p className="cursor-pointer">Cookie Policy</p>
-          <p className="cursor-pointer">Website terms of service</p>
-          <p className="cursor-pointer">Platform terms of service</p>
-          <p className="cursor-pointer">
-            Do Not Sell or Share My Personal Data
+          <p>© 2024 Formis Health Technologies Pvt. Ltd.</p>
+          <p className="cursor-pointer hover:text-white transition-colors duration-300">
+            <Link to="/privacy-policy">Privacy Policy</Link>
           </p>
+          {/* <p className="cursor-pointer hover:text-white transition-colors duration-300">Cookie Policy</p> */}
+          <p className="cursor-pointer hover:text-white transition-colors duration-300">
+            <Link to="/terms">Terms of Usage</Link>
+          </p>
+          <p className="cursor-pointer hover:text-white transition-colors duration-300">
+            <Link to="/shipping-and-refunds-policy">
+              Shipping and Refunds Policy
+            </Link>
+          </p>
+          {/* <p className="cursor-pointer hover:text-white transition-colors duration-300">
+            Do Not Sell or Share My Personal Data
+          </p> */}
         </div>
       </section>
     </footer>

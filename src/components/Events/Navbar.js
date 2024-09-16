@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import blacklogo from "../../assets/logo-full-black1.png";
 import whitelogo from "../../assets/logo-full-white.png";
+import hydrovibelogo from "../../assets/hydrovibe-logo2.png";
 import { IoIosMenu, IoMdClose } from "react-icons/io";
 import { FaFacebookF } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
@@ -13,11 +14,13 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Navbar = () => {
+const Navbar = ({ logo }) => {
   const [isInCarousel, setIsInCarousel] = useState(false);
   const [isInFooter, setIsInFooter] = useState(false);
   const [isInDryZone, setIsInDryZone] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
+  const [change, setChange] = useState(false);
 
   useGSAP(() => {
     ScrollTrigger.create({
@@ -51,49 +54,84 @@ const Navbar = () => {
     });
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setChange(true);
+    }, 7500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <nav
       id="navbar"
       className={`h-[100px] w-full fixed z-20 px-[20px] lg:px-[60px] 2xl:px-[90px]
         flex items-center justify-between
-        transition-colors duration-300 ${
+        transition-all duration-300 ${
           isInCarousel || isInDryZone
             ? "text-formisBlack14 bg-formisWhitef0"
             : "text-formisWhitef5"
-        } ${isInFooter ? "text-formisWhitef5 bg-formisBlack15" : ""}`}
+        } ${isInFooter ? "text-formisWhitef5 bg-formisBlack15" : ""} ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
     >
       <img
-        src={isInCarousel || isInDryZone ? blacklogo : whitelogo}
+        src={whitelogo}
         alt="logo"
-        className="max-w-[220px] sm-la:max-w-[260px]"
+        className={`transition-opacity duration-500 ${
+          change ? "opacity-0 hidden" : "opacity-100"
+        } max-w-[220px] sm-la:max-w-[260px]`}
+      />
+      <img
+        src={hydrovibelogo}
+        alt="logo"
+        className={`transition-opacity duration-500 ${
+          change ? "opacity-100" : "opacity-0"
+        } max-w-[220px] sm-la:max-w-[260px]`}
       />
 
       <div className="hidden lg:flex items-center gap-5">
         <ul className="flex gap-4 font-medium">
           <li
             className={`cursor-pointer underline-hover ${
-              isInCarousel || isInDryZone ? "after:bg-formisBlack15" : "after:bg-formisWhitef0"
+              isInCarousel || isInDryZone
+                ? "after:bg-formisBlack15"
+                : "after:bg-formisWhitef0"
             }`}
           >
             Home
           </li>
           <li
             className={`cursor-pointer underline-hover ${
-              isInCarousel || isInDryZone ? "after:bg-formisBlack15" : "after:bg-formisWhitef0"
+              isInCarousel || isInDryZone
+                ? "after:bg-formisBlack15"
+                : "after:bg-formisWhitef0"
             }`}
           >
             Upcoming Events
           </li>
           <li
             className={`cursor-pointer underline-hover ${
-              isInCarousel || isInDryZone ? "after:bg-formisBlack15" : "after:bg-formisWhitef0"
+              isInCarousel || isInDryZone
+                ? "after:bg-formisBlack15"
+                : "after:bg-formisWhitef0"
             }`}
           >
             Event Schedule
           </li>
           <li
             className={`cursor-pointer underline-hover ${
-              isInCarousel || isInDryZone ? "after:bg-formisBlack15" : "after:bg-formisWhitef0"
+              isInCarousel || isInDryZone
+                ? "after:bg-formisBlack15"
+                : "after:bg-formisWhitef0"
             }`}
           >
             Spotlight
@@ -119,7 +157,7 @@ const Navbar = () => {
           <img
             src={blacklogo}
             alt="logo"
-            className="max-w-[220px] sm-la:max-w-[260px]"
+            className="event-navbar-logo max-w-[220px] sm-la:max-w-[260px]"
           />
           <IoMdClose
             onClick={() => setMenuOpen(!menuOpen)}

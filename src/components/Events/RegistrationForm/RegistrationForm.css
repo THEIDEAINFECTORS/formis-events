@@ -1,11 +1,52 @@
-input{
-    @apply py-2 px-3 text-sm font-medium outline-none rounded-[10px] bg-[#545454] bg-opacity-[0.05] w-[100%] placeholder:text-[#545454]
+.input {
+  @apply py-2 px-3 text-sm font-medium rounded-[10px] outline-none border-2 border-transparent bg-[#545454] bg-opacity-[0.05] w-[100%] placeholder:text-[#545454] transition-all duration-300 focus:border-formisBlack15 hover:border-formisBlack15/50;
 }
 
-.select{
-    @apply py-2 px-3 text-sm font-medium rounded-[10px] bg-[#545454] bg-opacity-[0.05] w-[100%] placeholder:text-[#545454] flex
+.select {
+  @apply py-2 px-3 text-sm font-medium rounded-[10px] bg-[#545454] bg-opacity-[0.05] w-[100%] placeholder:text-[#545454] flex;
 }
 
-.button{
-    @apply bg-formisBlack15 text-formisWhitef5 text-[14px] font-bold py-2 px-3 w-full rounded-[10px]
+.button {
+  @apply bg-formisBlack15 text-formisWhitef5 text-[14px] font-bold py-3 px-3 w-full rounded-[10px];
 }
+
+/* 
+.cab-option {
+  padding: 5px 0;
+  border: 1px solid #15171c;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  flex-grow: 1;
+  margin: 0 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cab-option:hover {
+  background-color: #f0f0f0;
+}
+
+.cab-option.selected {
+  background-color: #15171c;
+  color: white;
+}
+*/
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 22px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid #f5f5f5;
+  border-right-color: #545454;
+  animation: l2 1s infinite linear;
+}
+@keyframes l2 {to{transform: rotate(1turn)}}

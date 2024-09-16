@@ -1,34 +1,33 @@
-import slide1 from "../../../assets/highlights/slide1.jpeg";
-import slide2 from "../../../assets/highlights/slide2.jpeg";
-import slide3 from "../../../assets/highlights/slide3.jpeg";
+import slide1 from "../../../assets/highlights/slide1.png";
+import slide2 from "../../../assets/highlights/slide2.png";
+import slide3 from "../../../assets/highlights/slide3.png";
 
 const slides = [
     {
       img: slide1,
-      leftHeader: "1000s",
-      leftDesc: "of hours save for the data engineering team",
-      rightHeader: "How HBO Max launched personalized reengagement campaigns",
+      leftHeader: "100%",
+      leftDesc: "Recommended",
+      rightHeader: "Razia - A Formisable",
       rightDesc:
-        "With mParticle, HBO Max's marketing team is able to create audiences without engineering support and engage with their users more strategically.",
+        "Awesome, great service. It will really have big impact on people lives to make their lives easier in emergency! Appreciating your work ! Thank you.",
     },
     {
       img: slide2,
-      leftHeader: "40%",
-      leftDesc: "increase in Sports+ membership using mParticle’s AI engine",
+      leftHeader: "100%",
+      leftDesc: "Recommended",
       rightHeader:
-        "How the New York Post tripled campaign conversions for its premium sports membership",
+        "Shallu Walia - A Formisable",
       rightDesc:
-        "Learn how the New York Post leveraged AI to improve campaign targeting and drive subscriptions.",
+        "Extremely helpful as delivery time is quite impressive. Process from ordering to delivery happens with lightning speed. All the best guys keep your servicing like this only.",
     },
     {
       img: slide3,
-      leftHeader: "44%",
-      leftDesc:
-        "lift in upsell conversions driven by Predictive Audiences via Cortex",
+      leftHeader: "100%",
+      leftDesc: "Recommended",
       rightHeader:
-        "How the New York Post tripled campaign conversions for its premium sports membership",
+        "Manju Shrivastava - A Formisable",
       rightDesc:
-        "Learn how the New York Post leveraged AI to improve campaign targeting and drive subscriptions.",
+        "I am super pleased with you guys, I stay in Germany and would love you guys do well and expand worldwide. Thank you",
     },
   ];
 

@@ -1,41 +1,54 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import img1 from "../assets/highlights/slide1.jpeg";
 import img2 from "../assets/highlights/slide2.jpeg";
 import img3 from "../assets/highlights/slide3.jpeg";
 import Navbar from "../components/Events/Navbar";
 import Footer from "../components/Footer/Footer";
-import AwardsMarquee from "../components/AwardsMarquee";
 import Hero from "../components/Events/Hero";
 import Carousel from "../components/Carousel";
 import Features from "../components/Events/Features/Features";
-import { slides, mainTitle1, mainTitle2 } from "../components/Events/eventsCarouselData";
+import test from "../assets/Test.mp4";
+import {
+  slides,
+  mainTitle1,
+  mainTitle2,
+} from "../components/Events/eventsCarouselData";
+
 
 const Events = () => {
   const [isOpen, setIsOpen] = useState(false);
+
   return (
     <main>
       <Navbar />
 
-      <section className="text-formisWhitef5 relative pt-[100px] h-[100svh]">
+      <section className="relative h-[100vh]">
         {/* Background */}
-        <div
-          style={{ backgroundImage: `url(${img1})` }}
-          className="absolute h-full w-full inset-0 bg-cover bg-center lg:bg-top filter grayscale -z-10"
-        ></div>
-        <div className="h-full w-full bg-formisBlack15 absolute top-0 left-0 opacity-80 z-10"></div>
+
+        <div className="w-screen h-screen">
+          <video
+            loop
+            autoPlay
+            playsInline
+            preload="auto"
+            muted={true}
+            className="relative z-0 w-screen h-screen object-cover"
+          >
+            <source src={test} />
+          </video>
+        </div>
 
         {/* Hero */}
-        <section className={`flex items-center justify-center relative px-[20px] h-[100%] text-center ${isOpen ? "z-30" : "z-10"}`}>
+        <section
+          className={`absolute top-0 inset-x-0 flex items-center justify-center px-[20px] h-[100%] text-center ${
+            isOpen ? "z-30" : "z-10"
+          }`}
+        >
           <Hero isOpen={isOpen} setIsOpen={setIsOpen} />
         </section>
-
-        {/* Marquee */}
-        {/* <div className="z-10 relative h-[25%] flex items-center justify-center px-[20px] md:mx-[40px] lg:mx-[60px] 2xl:mx-[90px]">
-          <AwardsMarquee />
-        </div> */}
       </section>
 
-      <section className="relative h-[100svh]">
+      <section className="relative h-screen">
         <div
           style={{ backgroundImage: `url(${img2})` }}
           className="absolute inset-0 bg-cover bg-center lg:bg-top filter grayscale -z-10"
@@ -56,7 +69,11 @@ const Events = () => {
         id="events-carousel"
         className="bg-formisWhitef0 text-formisBlack14"
       >
-        <Carousel slides={slides} mainTitle1={mainTitle1} mainTitle2={mainTitle2} />
+        <Carousel
+          slides={slides}
+          mainTitle1={mainTitle1}
+          mainTitle2={mainTitle2}
+        />
       </section>
 
       <section className="relative h-[100svh]">
@@ -75,7 +92,7 @@ const Events = () => {
         </div>
       </section>
 
-      <section id="dry-zone-schedule-section" >
+      <section id="dry-zone-schedule-section">
         <Features />
       </section>
 
@@ -101,3 +118,13 @@ const Events = () => {
 };
 
 export default Events;
+
+{
+  /* <div
+          style={{ backgroundImage: `url(${img1})` }}
+          className="absolute h-full w-full inset-0 bg-cover bg-center lg:bg-top filter grayscale -z-10"
+        ></div> */
+}
+{
+  /* <div className="h-full w-full bg-formisBlack15 absolute top-0 left-0 opacity-80 z-10"></div> */
+}
